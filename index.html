@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repaso III Trimestre · Octavo · VGP y Formación Ciudadana</title>
+<style>
+:root{--bg:#f4f8f1;--card:#fff;--tx:#1d2b1f;--mu:#5b6b5e;--g:#4a9a3a;--gd:#2f6f26;--ok:#dff3da;--bad:#fbe0e0;--bd:#d5e3d0}
+@media(prefers-color-scheme:dark){:root{--bg:#141a15;--card:#1f2921;--tx:#e8f0e6;--mu:#9fb0a2;--g:#6cc25a;--gd:#8fd47f;--ok:#21401c;--bad:#4a2323;--bd:#33453508}}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--tx);line-height:1.5}
+header{background:var(--g);color:#fff;padding:18px 16px;text-align:center}header h1{margin:0;font-size:1.3rem}header p{margin:4px 0 0;font-size:.9rem;opacity:.95}
+nav{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--bd);display:flex;gap:6px;overflow-x:auto;padding:8px}
+nav a{white-space:nowrap;text-decoration:none;color:var(--gd);border:1px solid var(--g);border-radius:16px;padding:4px 10px;font-size:.8rem}
+nav a.done{background:var(--g);color:#fff}
+main{max-width:900px;margin:auto;padding:12px}
+section{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px;margin:14px 0}
+h2{margin:0 0 2px;color:var(--gd);font-size:1.15rem}.src{color:var(--mu);font-size:.8rem;margin:0 0 10px}
+h3{margin:14px 0 8px;font-size:.95rem;border-bottom:2px solid var(--g);padding-bottom:3px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
+.fc{min-height:96px;border:1px solid var(--g);border-radius:10px;padding:10px;cursor:pointer;font-size:.85rem;background:var(--bg);display:flex;align-items:center;justify-content:center;text-align:center;user-select:none}
+.fc b{color:var(--gd);font-size:.95rem}.fc.on{background:var(--g);color:#fff;text-align:left;justify-content:flex-start}
+.hint{font-size:.75rem;color:var(--mu)}
+.q{margin:10px 0;padding:10px;border:1px solid var(--bd);border-radius:10px}.q p{margin:0 0 6px;font-weight:600;font-size:.9rem}
+.o{display:block;width:100%;text-align:left;margin:4px 0;padding:7px 10px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--tx);font:inherit;font-size:.85rem;cursor:pointer}
+.o.ok{background:var(--ok);border-color:var(--g)}.o.no{background:var(--bad);border-color:#c55}
+.ex{font-size:.8rem;color:var(--mu);margin-top:6px;display:none}
+.sc{display:inline-block;background:var(--g);color:#fff;border-radius:12px;padding:2px 10px;font-size:.8rem;margin-left:6px}
+.ab{margin:8px 0}.ab button,.rs{background:var(--g);color:#fff;border:0;border-radius:8px;padding:6px 12px;cursor:pointer;font:inherit;font-size:.8rem}
+.mod{display:none;background:var(--ok);padding:8px;border-radius:8px;margin-top:6px;font-size:.85rem}
+.rs{background:var(--mu)}footer{text-align:center;color:var(--mu);font-size:.75rem;padding:16px}
+</style></head><body>
+<header><h1>Repaso de la prueba sumativa · III Trimestre 2026</h1><p>Octavo · Visión Global y Planetaria + Formación Ciudadana · Complejo Educativo CIT</p>
+<p id="tot"></p></header>
+<nav id="nav"></nav><main id="m"></main>
+<footer>Toca una ficha para ver la respuesta. Responde el cuestionario de cada tema. <button class="rs" onclick="rst()">Reiniciar progreso</button></footer>
+<script>
+const T=[
+{t:"1. Gestión de riesgo y gestión territorial",s:"Libro Panorama Mundial 8, pp. 174-191 · Presentación",
+c:[["Gestión de riesgo","Proceso continuo de prevención ante los factores que generan riesgo y amenaza de desastres, sean de origen natural o social."],
+["Objetivos de la gestión de riesgo","1) Reducir riesgos y prevenir desastres. 2) Lograr una respuesta efectiva. 3) Conseguir la recuperación rápida de las zonas afectadas."],
+["Estrategias","Conocer los riesgos existentes · Incorporar la prevención en las políticas nacionales · Fortalecer la intervención de las instituciones · Lograr que toda la sociedad adopte acciones de prevención y mitigación."],
+["Gestión territorial","(u ordenamiento territorial) Uso racional del territorio, urbano o rural, para proteger los ecosistemas y aprovechar racionalmente los recursos. Áreas: recurso hídrico, ecosistemas y uso del suelo."],
+["Planes reguladores","Instrumentos de planificación de los gobiernos locales. Obligatorios en cada cantón: mapas, reglamentos, uso del suelo, vías de comunicación, zonificación de riesgos."],
+["CNE","Comisión Nacional de Prevención de Riesgos y Atención de Emergencias. Creada en 1969 (Ley Nacional de Emergencia) tras las erupciones del Irazú y el Arenal. Coordina prevención, mitigación y respuesta."],
+["Términos clave","Amenaza · Vulnerabilidad · Riesgo · Prevención · Mitigación (reducir vulnerabilidad) · Preparación · Alerta · Respuesta (acciones durante el evento para salvar vidas) · Rehabilitación · Reconstrucción."],
+["¿Por qué CR es vulnerable?","Cinturón de Fuego del Pacífico · placas Cocos, Caribe y Nazca · El Niño y La Niña (sequías e inundaciones) · aumento de población."],
+["Amenazas frecuentes","Deslizamientos, erosión lateral en llanuras y sistemas fluviales urbanos alterados (basura, deforestación, invasión de cauces)."]],
+q:[["Una municipalidad define dónde se puede construir y dónde se debe proteger el bosque. ¿Qué herramienta y qué gestión aplica?",["Plan regulador · gestión territorial","Alerta temprana · gestión de riesgo","Convenio internacional · mitigación","Censo agropecuario · respuesta"],0,"El plan regulador organiza el uso del suelo: es gestión territorial."],
+["Según el libro, ¿quiénes son responsables de las acciones de prevención?",["Solo Cruz Roja y Bomberos","Solo la CNE","Toda la población y las instituciones","Únicamente el Gobierno central"],2,"La prevención es responsabilidad de toda la sociedad."],
+["Un colegio hace simulacros y rutas de evacuación antes de la época lluviosa. Esto es sobre todo…",["reconstrucción","preparación y prevención","rehabilitación","respuesta"],1,"Se actúa antes del evento."],
+["Equipos de rescate sacan familias de una zona inundada mientras ocurre la lluvia fuerte. Es…",["prevención","planificación territorial","respuesta","reconstrucción"],2,"Respuesta: acciones durante el evento."],
+["¿Cuál NO es objetivo de la gestión de riesgo?",["Reducir riesgos","Respuesta efectiva","Recuperación rápida","Eliminar para siempre todos los fenómenos naturales"],3,"Los fenómenos naturales no se eliminan; se reduce el riesgo."],
+["Una razón de la vulnerabilidad de Costa Rica es…",["estar en el Cinturón de Fuego y en contacto de placas tectónicas","no tener ríos","carecer de lluvias","no tener volcanes"],0,"Ubicación geográfica."]]},
+{t:"2. Vulnerabilidad y amenazas en sectores clave",s:"Libro Panorama Mundial 8, pp. 192-221 · Presentación",
+c:[["Biodiversidad","Cambios en lluvia, humedad y temperatura afectan distribución y reproducción. Aves y anfibios son los más perjudicados. Amenaza: especies invasoras (pez león, lirio acuático, hongos y plagas). ~2000 especies bajo amenaza."],
+["Salud","Reaparece el dengue (1993, Caribe); también zika, chikunguña, malaria, influenza y diarreas. Consecuencias: gasto estatal, ausentismo escolar y laboral. 3 iniciativas: sensibilidad del sistema, grado de exposición, capacidad de adaptación."],
+["Infraestructura","Eventos extremos dañan carreteras, puentes, diques, viviendas, escuelas, acueductos y energía. 2015-2017: ~20 000 millones de dólares, +400 viviendas y 25 carreteras dañadas."],
+["Recursos pesqueros","Aguas más cálidas, subida del nivel del mar, tormentas, acidificación y pérdida de corales/manglares → menos peces y menos desembarcos. Pesca artesanal (~18 000 familias) la más vulnerable."],
+["Sector agropecuario","Temperaturas variables, lluvias irregulares, sequías e inundaciones → plagas, pérdida de nutrientes, bajos rendimientos. Café y frijol, los más sensibles. Ganadería: estrés térmico, falta de pasto, y emite metano."],
+["Recurso hídrico","Más temperatura y menos lluvia → menos caudales. Erosión, inundaciones, daño a acueductos, racionamientos y costos. 60 % del agua potable viene de acuíferos."],
+["Generación energética","Depende del clima. Hidroeléctrica (embalses; sequía la afecta), solar, eólica, geotérmica (ICE, Miravalles), biomasa (desechos orgánicos) y búnker-diésel (fósil, contamina)."],
+["Matriz eléctrica de CR","Agua 74,35 % · geotermia 12,74 % · viento 10,30 % · térmica 1,88 % · biomasa 0,72 % · sol 0,01 %."]],
+q:[["Una plaga nueva que llega a un bosque y desplaza especies nativas es un ejemplo de…",["especie invasora","energía renovable","gestión territorial","mitigación"],0,"Las especies exóticas alteran los ecosistemas."],
+["Aumenta la presencia de zancudos y reaparecen enfermedades como el dengue. ¿Qué sector se ve más afectado?",["Infraestructura","Salud","Pesca","Energía"],1,"Enfermedades vectoriales: sector salud."],
+["Una presa produce menos electricidad porque llovió poco. ¿Qué energía es?",["Solar","Biomasa","Hidroeléctrica","Búnker-diésel"],2,"Depende del caudal de agua en embalses."],
+["Según el libro, ¿qué cultivos son los más sensibles al clima actual?",["Caña y palma","Café y frijol","Banano y piña","Arroz y maíz"],1,"Según el IICA, café y frijol."],
+["El calentamiento de los mares afecta a la pesca porque…",["los peces se multiplican más","las especies migran y disminuye su abundancia","baja el nivel del mar","desaparecen los barcos"],1,"Se mueven buscando temperaturas favorables."],
+["¿Qué energía aprovecha el calor interno de la Tierra?",["Eólica","Solar","Geotérmica","Biomasa"],2,"El ICE la usa en Miravalles."],
+["Más temperatura y menos lluvia causan en el recurso hídrico…",["más caudales","menor caudal de ríos y fuentes","menos evaporación","aguas más puras"],1,"Disminuye la disponibilidad."]],
+a:[["Explique de forma extensa un ejemplo de cómo el cambio climático afecta el turismo y otro la agricultura en Costa Rica.","Turismo: la pérdida de corales, manglares y playas por el aumento del nivel del mar y las tormentas hace menos atractivos los destinos; además, daños a carreteras, hoteles e instalaciones y menor biodiversidad reducen visitantes e ingresos. Agricultura: sequías, lluvias irregulares y temperaturas altas bajan rendimientos de café y frijol, favorecen plagas y enfermedades, reducen alimentos y empleo rural."]]},
+{t:"3. Adaptación y mitigación; convenios internacionales",s:"Libro Panorama Mundial 8, pp. 222-245 · Presentación",
+c:[["Adaptación vs. mitigación","Adaptación: ajustarse a los efectos (cultivos resistentes, infraestructura segura). Mitigación: reducir las emisiones de GEI (energías limpias, reforestar)."],
+["ENCC de Costa Rica","Estrategia Nacional de Cambio Climático (2008) y su Plan de Acción. Mitigación: energía, transporte, agropecuario, industria, turismo, residuos. Adaptación: agua, energía, agro, pesca, salud, biodiversidad."],
+["Acciones por sector","Hídrico: planes de gestión integrada del agua. Biodiversidad: parques, áreas protegidas, evitar incendios. Transporte: bicicleta, tren, combustibles limpios. Agro: cultivos resistentes y planificar cosechas. Salud: programas, higiene y monitoreo."],
+["Centros educativos","Cambio climático en planes de estudio · formación docente · sensibilización · vínculo escuela-comunidad · centros sostenibles. Unesco: aprender a saber, a hacer y a ser."],
+["IPCC y CMNUCC","IPCC: grupo intergubernamental creado por la ONU en 1988. Luego, la Convención Marco de la ONU sobre Cambio Climático."],
+["Protocolo de Kioto","1997. Países industrializados se comprometen a reducir GEI. EE. UU. no participó, Canadá se retiró; Japón y Nueva Zelanda no entraron al 2.º periodo."],
+["Acuerdo de París","2015. Mantener el aumento de la temperatura por debajo de 2 °C este siglo, reducir CO₂ y financiar acciones. Liderado por Perú y Francia."],
+["Energías renovables","Inagotables, limpias, reducen dependencia de fósiles, competitivas y aceptadas. Son la principal estrategia contra el cambio climático. En CR hubo 250 días solo con electricidad renovable en 2016."],
+["Ejemplos globales","Ámsterdam y la bicicleta (sin GEI) · eólica en Europa y Chile · Corredor de Energía Limpia de África · América Latina, líder renovable."]],
+q:[["Una ciudad construye ciclovías y un tranvía eléctrico. Esta es una medida de…",["mitigación que reduce emisiones","adaptación a las sequías","respuesta a terremotos","gestión de riesgo volcánico"],0,"Menos autos de combustión, menos GEI."],
+["¿Cuál es el principal objetivo del Acuerdo de París?",["Prohibir el turismo","Mantener el aumento de temperatura por debajo de 2 °C","Eliminar la agricultura","Crear el IPCC"],1,"Limitar el calentamiento."],
+["Una debilidad de Kioto fue que…",["lo firmó todo el planeta","solo obligaba a países desarrollados y varios se retiraron o no participaron","no hablaba de GEI","era sobre pesca"],1,"EE. UU., Canadá, Japón, etc."],
+["Sembrar árboles en cafetales y orillas de ríos es una acción de…",["adaptación y mitigación","solo un problema","contaminación","urbanización"],0,"Absorbe carbono y protege el suelo."],
+["¿Por qué las renovables ayudan frente al cambio climático?",["Agotan los recursos","Reducen la dependencia de combustibles fósiles y de GEI","Aumentan el CO₂","Eliminan todos los problemas"],1,"Aprovechan fuentes naturales que no se agotan."],
+["Proyectos eólicos en zonas ventosas y geotérmicos en volcanes son…",["amenazas","adaptaciones que usan energías limpias","plagas","gastos sin efecto"],1,"Reducen emisiones y degradación ambiental."]]},
+{t:"4. Jóvenes diferentes pero iguales: conceptos básicos",s:"Presentación (Formación Ciudadana)",
+c:[["Diversidad","Diferencias entre personas o grupos por etnia, opinión política, nacionalidad, género, sexo, religión, etc."],
+["Igualdad","Todas las personas son iguales en dignidad y derechos; igualdad ante la ley, sin estereotipos ni discriminación."],
+["Respeto","Reconocer la igualdad de la condición humana y que todas las personas merecen los mismos derechos."],
+["Tolerancia","Respeto y aceptación de las diferentes maneras de ser, pensar y actuar."],
+["Otredad","Forma de percibir a los demás (individual, grupal o nacional); se desarrolla junto con la identidad."],
+["Solidaridad","Cooperación, auxilio, ayuda; actuar con sentido de comunidad ante la necesidad ajena."],
+["Migración","Desplazamiento de población. Emigrante: sale; inmigrante: llega. Interna (dentro del país) o externa (entre países)."],
+["Sociedad inclusiva","Desarrollo cuyos frutos llegan a la mayoría de la población."],
+["Interculturalidad","Relación entre culturas que busca diálogo, comunicación, entendimiento, respeto, tolerancia y cooperación."],
+["Sociedad humanista","Prioriza la protección de los derechos humanos y busca el bien común."]],
+q:[["Vecinos organizan una olla comunitaria para familias afectadas por una inundación. Se vive…",["fanatismo","solidaridad","xenofobia","otredad negativa"],1,"Ayuda ante la necesidad de otros."],
+["Un colegio acepta que cada estudiante practique su religión sin burlas. Ejemplifica…",["tolerancia","racismo","migración","fanatismo"],0,"Aceptar maneras de pensar y actuar distintas."],
+["Una persona sale de Nicaragua hacia Costa Rica. Para Costa Rica es…",["emigrante","inmigrante","migración interna","nativa"],1,"Quien llega es inmigrante."],
+["Un programa de becas y transporte garantiza que jóvenes de todas las comunidades estudien. Aporta a…",["una sociedad inclusiva","el fanatismo","la discriminación","la xenofobia"],0,"Los beneficios llegan a la mayoría."],
+["Estudiantes de distintas culturas comparten comidas, música y lenguas con respeto. Se trata de…",["interculturalidad","racismo","aislamiento","migración forzada"],0,"Diálogo y relación entre culturas."],
+["Lo que significa que todas las personas valen igual y tienen los mismos derechos es…",["igualdad","diversidad","otredad","migración"],0,"Igualdad en dignidad y ante la ley."]]},
+{t:"5. Tipos de discriminación",s:"Presentación (Formación Ciudadana)",
+c:[["Discriminación","Rechazo o exclusión de personas o grupos por razones étnicas, económicas, religiosas, de sexo, preferencia sexual, etc."],
+["Racismo","Un grupo discrimina a otro con la falsa creencia de que una raza es superior. Ej.: segregación en EE. UU., Holocausto, apartheid."],
+["Xenofobia","Rechazo y no aceptación de los extranjeros por razones étnicas, religiosas, lingüísticas y culturales. Puede llevar a violencia."],
+["Fanatismo","Comportamientos extremos en defensa de ideas o creencias (religiosas, políticas, deportivas); solo acepta su punto de vista; conduce a la intolerancia."],
+["Otras formas","Discriminación contra mujeres, personas adultas mayores, con discapacidad e indígenas. Ej.: Ruanda, fascismo, esclavitud."]],
+q:[["Un grupo de aficionados agrede a los seguidores del equipo rival. Esto es…",["fanatismo","solidaridad","interculturalidad","migración"],0,"Defensa extrema de una creencia (deportiva)."],
+["Un local se niega a atender a una familia por hablar otro idioma y venir de otro país. Es…",["xenofobia","tolerancia","sociedad inclusiva","igualdad"],0,"Rechazo hacia extranjeros."],
+["Un régimen clasifica personas y les niega derechos por supuesta superioridad racial. Es…",["racismo","xenofobia","fanatismo deportivo","solidaridad"],0,"Falsa creencia de superioridad."],
+["Una empresa no contrata a una persona por tener 60 años. Es un caso de…",["discriminación","inclusión","tolerancia","interculturalidad"],0,"Exclusión por edad."],
+["¿Qué puede provocar la xenofobia?",["Acciones de violencia contra personas","Mayor convivencia","Más respeto","Cooperación intercultural"],0,"Puede derivar en violencia."]]},
+{t:"6. Normativa contra la discriminación",s:"Presentación (leyes) y libro de Formación Ciudadana",
+c:[["Constitución Política","Nació en noviembre de 1949. Art. 33: toda persona es igual ante la ley y no puede practicarse discriminación contraria a la dignidad humana. Art. 89: fines culturales y patrimonio."],
+["Convención contra la discriminación racial","Firmada en 1965 (21 de marzo, Día Internacional). Los Estados condenan la segregación racial y el apartheid; toman medidas inmediatas en enseñanza, educación, cultura e información para combatir prejuicios."],
+["Ley Integral Persona Adulta Mayor","Ley 7935 (1999). Igualdad de oportunidades y vida digna. Derechos laborales, ocupar puestos sin discriminación por edad e integridad."],
+["Ley Indígena","Ley 6172 (1977). Restituir derechos. Define indígena; 22 territorios; reservas inalienables, imprescriptibles y exclusivas; prohíbe cantinas en las reservas."],
+["Ley 7600","Igualdad de oportunidades para personas con discapacidad (1996). Accesibilidad (transporte, edificios, información), eliminar discriminación; medios sin mensajes estereotipados."],
+["Ley VIH-Sida","Ley 7771 (1998). Prevención, atención, derechos y deberes. Prohíbe discriminación laboral; no hay obligación de informar al patrono. Art. 48: sanción de 20 a 60 días multa."],
+["Ley de Migración y Extranjería","Regula ingreso, egreso y permanencia de personas costarricenses y extranjeras; respeto de derechos humanos. Consejo Nacional de Migración recomienda la política migratoria. (Citada como Ley 8764 de 2009 en el libro y como 8487 de 2005 en una presentación.)"]],
+q:[["¿Qué artículo de la Constitución establece la igualdad ante la ley?",["Art. 33","Art. 89","Art. 7","Art. 50"],0,"Artículo 33."],
+["Ley que protege la accesibilidad al transporte y a edificios para personas con discapacidad:",["Ley 7600","Ley 7771","Ley 6172","Ley 7935"],0,"Ley 7600."],
+["Una norma impide instalar cantinas en las reservas y las declara exclusivas de las comunidades. Es la…",["Ley Indígena","Ley de Migración","Ley VIH-Sida","Ley 7600"],0,"Ley 6172."],
+["Un trabajador con VIH, según la ley, …",["debe informar a sus compañeros","no está obligado a informar su estado a su patrono","puede ser despedido","pierde sus derechos"],1,"Ley 7771 prohíbe la discriminación laboral."],
+["La Ley 7935 protege principalmente a…",["niñez","personas adultas mayores","migrantes","indígenas"],1,"Persona Adulta Mayor."],
+["La Convención sobre discriminación racial exige a los Estados…",["ignorar prejuicios","tomar medidas inmediatas en educación y cultura","autorizar la segregación","evitar leyes"],1,"Medidas contra prejuicios raciales."]],
+a:[["Una joven ngäbe debe caminar horas y rendir un examen igual al de los demás para entrar a la universidad. Explique 2 problemas educativos que viven los pueblos indígenas.","Ejemplos: 1) Barreras geográficas y económicas (distancia, falta de transporte y recursos) que dificultan estudiar. 2) Pruebas y programas que no consideran su cultura, idioma ni contexto, lo que reduce su acceso y permanencia; muchos desertan para trabajar en el campo. La Ley Indígena y la igualdad (Art. 33) exigen oportunidades reales."]]},
+{t:"7. Costa Rica: enriquecimiento intercultural",s:"Presentación (Formación Ciudadana)",
+c:[["Cultura","Sistema coherente de ideas, valores, actitudes, modos de vida y expresiones artísticas de un grupo social."],
+["Costa Rica","Sociedad pluricultural, diversa, multilingüe y multiétnica."],
+["1. Migraciones","Desplazamientos de población (búsqueda de vida mejor, guerras, desastres, persecuciones) que ponen en contacto culturas."],
+["2. Lenguaje","Transmite sentimientos y conocimientos; identifica a los pueblos. Idiomas muy hablados: chino, hindú, inglés y español."],
+["3. Educación","Desarrolla aptitudes, valores y progreso; mejora la calidad de vida."],
+["4. Expresión artística","Literatura, pintura, música, baile y cine difunden la cultura; debemos proteger el patrimonio."],
+["Patrimonio cultural","Art. 89: conservar el patrimonio histórico y artístico. El Ministerio de Cultura y Juventud nació en 1970."]],
+q:[["Una familia llega a un país huyendo de una guerra y aporta su comida y costumbres. ¿Qué característica enriqueció la cultura?",["Migraciones","Educación","Expresión artística","Lenguaje"],0,"Las migraciones ponen en contacto culturas."],
+["Aprender varios idiomas para comunicarse con otras culturas ejemplifica…",["el lenguaje","la migración","la educación","el arte"],0,"El idioma facilita la comunicación."],
+["Una exposición de pintura y música tradicional difunde la identidad. Es…",["expresión artística","discriminación","fanatismo","migración"],0,"Arte como medio de difusión."],
+["Costa Rica se describe como sociedad…",["homogénea","pluricultural, diversa, multilingüe y multiétnica","monolingüe","cerrada"],1,"Diversidad cultural."],
+["Una comunidad valora la diversidad y evita la exclusión. ¿Cómo se enriquece interculturalmente?",["Respeta la igualdad ante la ley y evita la discriminación","Prohíbe costumbres distintas","Promueve estereotipos","Restringe intercambios"],0,"El respeto y la igualdad enriquecen."]]},
+{t:"8. Resolución Alternativa de Conflictos (RAC)",s:"Presentación (Formación Ciudadana)",
+c:[["Conflicto","Problema o contradicción natural en la vida en sociedad; puede ser dinamizador de cambios. Lo importante es resolverlo de forma pacífica y democrática."],
+["Causas","Imponer la voluntad del más fuerte · opiniones opuestas sobre lo justo · irrespeto a la libertad de expresión · diferencias políticas, étnicas o religiosas · trato despectivo."],
+["Valores para resolver","Tolerancia, respeto, comprensión, humildad, escucha y aceptar que el otro es diferente."],
+["RAC","Respuesta a la necesidad de una solución rápida, efectiva y armónica."],
+["Mecanismos","Conciliación, diálogo, mediación y arbitraje."],
+["Ley en CR","Ley sobre Resolución Alternativa de Conflictos y Promoción de la Paz Social. Art. 1: la diversidad no impide vivir en paz."]],
+q:[["Dos compañeros discuten y un tercero neutral los ayuda a llegar a un acuerdo. Es…",["mediación","racismo","arbitraje forzado","xenofobia"],0,"Mediación."],
+["¿Cuál NO es un mecanismo de RAC?",["Conciliación","Diálogo","Arbitraje","Violencia"],3,"La violencia no es un mecanismo."],
+["Según la presentación, los conflictos…",["son anormales y deben eliminarse","son parte de la vida y deben resolverse pacíficamente","se resuelven con gritos","no existen"],1,"Son normales."],
+["¿Qué actitud ayuda a resolver un conflicto?",["Escucha y respeto","Imponer la voluntad","Burlarse","Agredir"],0,"Escucha, tolerancia y respeto."],
+["La RAC busca soluciones…",["rápidas, efectivas y armónicas","lentas","violentas","impuestas"],0,"Ese es su propósito."]]}
+];
+let S={};try{S=JSON.parse(localStorage.getItem("r8")||"{}")}catch(e){}
+const sv=()=>{try{localStorage.setItem("r8",JSON.stringify(S))}catch(e){}};
+const m=document.getElementById("m"),nav=document.getElementById("nav");
+function sc(i){const a=S["t"+i]||{};return Object.values(a).filter(v=>v).length}
+function upd(){let t=0,n=0;T.forEach((x,i)=>{const k=sc(i);t+=k;n+=x.q.length;document.getElementById("s"+i).textContent=k+"/"+x.q.length;nav.children[i].classList.toggle("done",k==x.q.length&&Object.keys(S["t"+i]||{}).length==x.q.length)});document.getElementById("tot").textContent="Aciertos: "+t+" / "+n}
+T.forEach((x,i)=>{
+ nav.insertAdjacentHTML("beforeend",`<a href="#t${i}">Tema ${i+1}</a>`);
+ let h=`<section id="t${i}"><h2>${x.t}<span class="sc" id="s${i}"></span></h2><p class="src">${x.s}</p><h3>Fichas de repaso <span class="hint">(toca para voltear)</span></h3><div class="grid">`;
+ x.c.forEach(c=>h+=`<div class="fc" onclick="fl(this)" data-f="${c[0]}" data-b="${c[1]}"><b>${c[0]}</b></div>`);
+ h+=`</div><h3>Cuestionario</h3>`;
+ x.q.forEach((q,j)=>{h+=`<div class="q"><p>${j+1}. ${q[0]}</p>`;q[1].forEach((o,k)=>h+=`<button class="o" onclick="an(${i},${j},${k},this)">${String.fromCharCode(97+k)}) ${o}</button>`);h+=`<div class="ex">✔ ${q[3]}</div></div>`});
+ (x.a||[]).forEach(a=>h+=`<div class="ab"><p><b>Pregunta de desarrollo:</b> ${a[0]}</p><button onclick="this.nextElementSibling.style.display='block'">Ver respuesta modelo</button><div class="mod">${a[1]}</div></div>`);
+ m.insertAdjacentHTML("beforeend",h+"</section>")});
+function fl(e){const on=e.classList.toggle("on");e.innerHTML=on?e.dataset.b:"<b>"+e.dataset.f+"</b>"}
+function an(i,j,k,b){const q=T[i].q[j],p=b.parentNode;if(p.dataset.d)return;p.dataset.d=1;
+ [...p.querySelectorAll(".o")].forEach((o,n)=>{if(n==q[2])o.classList.add("ok")});if(k!=q[2])b.classList.add("no");
+ p.querySelector(".ex").style.display="block";(S["t"+i]=S["t"+i]||{})[j]=k==q[2]?1:0;sv();upd()}
+function rst(){S={};sv();location.reload()}
+(function(){T.forEach((x,i)=>{const a=S["t"+i]||{};Object.keys(a).forEach(j=>{const p=document.querySelectorAll("#t"+i+" .q")[j],q=x.q[j];if(!p)return;p.dataset.d=1;const os=p.querySelectorAll(".o");os[q[2]].classList.add("ok");p.querySelector(".ex").style.display="block"})});upd()})();
+</script></body></html>
